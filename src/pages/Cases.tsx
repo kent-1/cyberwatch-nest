@@ -76,7 +76,7 @@ export default function Cases() {
       {/* Cases Grid */}
       <div className="grid gap-4">
         {filteredCases.map((case_) => (
-          <Card key={case_.id} className="hover:shadow-md transition-shadow cursor-pointer">
+          <Card key={case_.id} className="hover:shadow-md transition-shadow cursor-pointer" onClick={() => window.location.href = `/cases/${case_.id}`}>
             <CardHeader>
               <div className="flex items-start justify-between">
                 <div className="space-y-2 flex-1">

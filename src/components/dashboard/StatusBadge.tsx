@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
-type StatusType = "critical" | "high" | "medium" | "low" | "open" | "in-progress" | "closed" | "true-positive" | "false-positive" | "new";
+type StatusType = "critical" | "high" | "medium" | "low" | "open" | "in-progress" | "closed" | "true-positive" | "false-positive" | "new" | "waiting" | "completed" | "cancel";
 
 interface StatusBadgeProps {
   status: StatusType;
@@ -31,6 +31,12 @@ export function StatusBadge({ status, className }: StatusBadgeProps) {
         return "bg-muted text-muted-foreground";
       case "new":
         return "bg-info text-info-foreground";
+      case "waiting":
+        return "bg-warning text-warning-foreground";
+      case "completed":
+        return "bg-success text-success-foreground";
+      case "cancel":
+        return "bg-muted text-muted-foreground";
       default:
         return "bg-secondary text-secondary-foreground";
     }
